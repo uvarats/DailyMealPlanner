@@ -8,6 +8,11 @@ namespace WindowsFormsApp1.MVP.Model
 {
     public interface IMealsRepository
     {
+        void Create(Meal meal);
+        void Delete(int id);
+        Meal GetByID(int id);
+        IEnumerable<Meal> GetMealsList();
+        void Update(int id, Meal meal);
         void Save();
     }
 }

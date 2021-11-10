@@ -27,9 +27,34 @@ namespace WindowsFormsApp1.MVP.Model
             }
         }
 
+        public void Create(Meal meal)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Meal GetByID(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Meal> GetMealsList()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Save()
         {
             GenericSerializer<Meals>.Serialize(_meals, _filePath);
+        }
+
+        public void Update(int id, Meal meal)
+        {
+            throw new NotImplementedException();
         }
     }
 }
