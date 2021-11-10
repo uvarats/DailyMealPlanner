@@ -23,7 +23,7 @@ namespace WindowsFormsApp1.MVP.Presenter
             _userData = userData;
 
             UpdateCategoriesBox();
-            UpdateProductsListBox();
+            //UpdateProductsListBox();
             UpdateDCR();
         }
 

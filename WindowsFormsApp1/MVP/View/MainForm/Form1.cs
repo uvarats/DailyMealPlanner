@@ -115,14 +115,37 @@ namespace WindowsFormsApp1
         #region MealsView
         public double DCR { get => Convert.ToDouble(dcrLabel.Text); set => dcrLabel.Text = value.ToString(); }
         public MealsPresenter MealsPresenter { private get; set; }
-        public int MealSelectedProduct { get => addedProducts.SelectedIndex; set => addedProducts.SelectedIndex = value; }
-        public int SelectedMeal { get => mealsBox.SelectedIndex; set => mealsBox.SelectedIndex = value; }
+        public int MealSelectedProduct 
+        {
+            get => addedProducts.SelectedIndex;
+            set
+            {
+                if (value < MealProductsList.Count)
+                {
+                    addedProducts.SelectedIndex = value;
+                }
+                else addedProducts.SelectedIndex = 0;
+            }
+        }
+        public int SelectedMeal 
+        {
+            get => mealsBox.SelectedIndex;
+            set
+            {
+                if (value < MealsList.Count)
+                {
+                    mealsBox.SelectedIndex = value;
+                } else mealsBox.SelectedIndex = 0;
+            }
+        }
         public string CurrentName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public int CurrentGramms { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public double CurrentProtein { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public double CurrentFats { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public double CurrentCarbs { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public double CurrentCalories { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public IList<string> MealsList { get => (IList<string>)mealsBox.DataSource; set => mealsBox.DataSource = value; }
+        public IList<string> MealProductsList { get => (IList<string>)addedProducts.DataSource; set => addedProducts.DataSource = value; }
         #endregion
 
         public Form1()
@@ -139,7 +162,7 @@ namespace WindowsFormsApp1
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Presenter.UpdateProductsListBox();
-            SelectedProduct = 0;
+            //SelectedProduct = 0;
         }
 
 
@@ -247,6 +270,11 @@ namespace WindowsFormsApp1
         private void grammsField_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) e.Handled = true;
+        }
+
+        private void mealsBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MealsPresenter.UpdateMealProducts();
         }
     }
 }

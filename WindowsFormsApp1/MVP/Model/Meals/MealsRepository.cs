@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using XML;
 using static WindowsFormsApp1.MVP.Model.Meals;
 
 namespace WindowsFormsApp1.MVP.Model
@@ -29,22 +30,29 @@ namespace WindowsFormsApp1.MVP.Model
 
         public void Create(Meal meal)
         {
-            throw new NotImplementedException();
+            _meals.MealsList.Add(meal);
+            Save();
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _meals.MealsList.RemoveAt(id);
+            Save();
         }
 
         public Meal GetByID(int id)
         {
-            throw new NotImplementedException();
+            return _meals.MealsList[id];
+        }
+
+        public IEnumerable<Product> GetMealProducts(int id)
+        {
+            return _meals.MealsList[id].Products;
         }
 
         public IEnumerable<Meal> GetMealsList()
         {
-            throw new NotImplementedException();
+            return _meals.MealsList;
         }
 
         public void Save()
@@ -54,7 +62,8 @@ namespace WindowsFormsApp1.MVP.Model
 
         public void Update(int id, Meal meal)
         {
-            throw new NotImplementedException();
+            _meals.MealsList[id] = meal;
+            Save();
         }
     }
 }

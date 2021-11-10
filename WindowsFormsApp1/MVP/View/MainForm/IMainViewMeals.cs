@@ -9,6 +9,8 @@ namespace WindowsFormsApp1.MVP.View
 {
     public partial interface IMainView
     {
+        IList<string> MealsList { get; set; }
+        IList<string> MealProductsList { get; set; } 
         int MealSelectedProduct { get; set; }
         int SelectedMeal { get; set; }
 
