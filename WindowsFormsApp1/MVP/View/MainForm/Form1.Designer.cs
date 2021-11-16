@@ -61,18 +61,18 @@
             this.categoryName = new System.Windows.Forms.TextBox();
             this.categoriesBox = new System.Windows.Forms.ListBox();
             this.meals = new System.Windows.Forms.TabPage();
+            this.mealCaloriesField = new System.Windows.Forms.TextBox();
+            this.mealsCarbsField = new System.Windows.Forms.TextBox();
+            this.mealFatsField = new System.Windows.Forms.TextBox();
+            this.mealProteinField = new System.Windows.Forms.TextBox();
+            this.mealGrammsField = new System.Windows.Forms.TextBox();
+            this.mealProductNameField = new System.Windows.Forms.TextBox();
             this.categoryCombo2 = new System.Windows.Forms.ComboBox();
             this.addedProducts = new System.Windows.Forms.ListBox();
             this.mealsBox = new System.Windows.Forms.ListBox();
             this.productsBox2 = new System.Windows.Forms.ListBox();
             this.dcrLabel = new System.Windows.Forms.Label();
             this.userDataButton = new System.Windows.Forms.Button();
-            this.mealProductNameField = new System.Windows.Forms.TextBox();
-            this.mealGrammsField = new System.Windows.Forms.TextBox();
-            this.mealProteinField = new System.Windows.Forms.TextBox();
-            this.mealFatsField = new System.Windows.Forms.TextBox();
-            this.mealsCarbsField = new System.Windows.Forms.TextBox();
-            this.mealCaloriesField = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.viewAndEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.caloriesField)).BeginInit();
@@ -130,7 +130,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(145, 306);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(112, 28);
             this.button3.TabIndex = 24;
@@ -282,7 +282,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(425, 277);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(107, 28);
             this.button2.TabIndex = 6;
@@ -303,7 +303,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(128, 10);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(165, 22);
             this.textBox1.TabIndex = 4;
@@ -312,7 +312,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(16, 306);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 28);
             this.button1.TabIndex = 3;
@@ -325,7 +325,7 @@
             this.categoriesCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.categoriesCombo.FormattingEnabled = true;
             this.categoriesCombo.Location = new System.Drawing.Point(424, 9);
-            this.categoriesCombo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.categoriesCombo.Margin = new System.Windows.Forms.Padding(4);
             this.categoriesCombo.Name = "categoriesCombo";
             this.categoriesCombo.Size = new System.Drawing.Size(163, 24);
             this.categoriesCombo.TabIndex = 2;
@@ -363,7 +363,7 @@
             // newCategoryButton
             // 
             this.newCategoryButton.Location = new System.Drawing.Point(175, 315);
-            this.newCategoryButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.newCategoryButton.Margin = new System.Windows.Forms.Padding(4);
             this.newCategoryButton.Name = "newCategoryButton";
             this.newCategoryButton.Size = new System.Drawing.Size(127, 28);
             this.newCategoryButton.TabIndex = 28;
@@ -374,7 +374,7 @@
             // deleteCategoryButton
             // 
             this.deleteCategoryButton.Location = new System.Drawing.Point(21, 315);
-            this.deleteCategoryButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.deleteCategoryButton.Margin = new System.Windows.Forms.Padding(4);
             this.deleteCategoryButton.Name = "deleteCategoryButton";
             this.deleteCategoryButton.Size = new System.Drawing.Size(125, 28);
             this.deleteCategoryButton.TabIndex = 27;
@@ -463,12 +463,60 @@
             this.meals.Text = "Meals";
             this.meals.UseVisualStyleBackColor = true;
             // 
+            // mealCaloriesField
+            // 
+            this.mealCaloriesField.Location = new System.Drawing.Point(497, 148);
+            this.mealCaloriesField.Name = "mealCaloriesField";
+            this.mealCaloriesField.ReadOnly = true;
+            this.mealCaloriesField.Size = new System.Drawing.Size(100, 22);
+            this.mealCaloriesField.TabIndex = 11;
+            // 
+            // mealsCarbsField
+            // 
+            this.mealsCarbsField.Location = new System.Drawing.Point(497, 120);
+            this.mealsCarbsField.Name = "mealsCarbsField";
+            this.mealsCarbsField.ReadOnly = true;
+            this.mealsCarbsField.Size = new System.Drawing.Size(100, 22);
+            this.mealsCarbsField.TabIndex = 10;
+            // 
+            // mealFatsField
+            // 
+            this.mealFatsField.Location = new System.Drawing.Point(497, 92);
+            this.mealFatsField.Name = "mealFatsField";
+            this.mealFatsField.ReadOnly = true;
+            this.mealFatsField.Size = new System.Drawing.Size(100, 22);
+            this.mealFatsField.TabIndex = 9;
+            // 
+            // mealProteinField
+            // 
+            this.mealProteinField.Location = new System.Drawing.Point(497, 64);
+            this.mealProteinField.Name = "mealProteinField";
+            this.mealProteinField.ReadOnly = true;
+            this.mealProteinField.Size = new System.Drawing.Size(100, 22);
+            this.mealProteinField.TabIndex = 8;
+            // 
+            // mealGrammsField
+            // 
+            this.mealGrammsField.Location = new System.Drawing.Point(497, 36);
+            this.mealGrammsField.Name = "mealGrammsField";
+            this.mealGrammsField.ReadOnly = true;
+            this.mealGrammsField.Size = new System.Drawing.Size(100, 22);
+            this.mealGrammsField.TabIndex = 7;
+            // 
+            // mealProductNameField
+            // 
+            this.mealProductNameField.Location = new System.Drawing.Point(497, 8);
+            this.mealProductNameField.Name = "mealProductNameField";
+            this.mealProductNameField.ReadOnly = true;
+            this.mealProductNameField.Size = new System.Drawing.Size(100, 22);
+            this.mealProductNameField.TabIndex = 6;
+            // 
             // categoryCombo2
             // 
             this.categoryCombo2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.categoryCombo2.FormattingEnabled = true;
             this.categoryCombo2.Location = new System.Drawing.Point(179, 6);
-            this.categoryCombo2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.categoryCombo2.Margin = new System.Windows.Forms.Padding(4);
             this.categoryCombo2.Name = "categoryCombo2";
             this.categoryCombo2.Size = new System.Drawing.Size(105, 24);
             this.categoryCombo2.TabIndex = 5;
@@ -478,17 +526,18 @@
             this.addedProducts.FormattingEnabled = true;
             this.addedProducts.ItemHeight = 16;
             this.addedProducts.Location = new System.Drawing.Point(331, 6);
-            this.addedProducts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addedProducts.Margin = new System.Windows.Forms.Padding(4);
             this.addedProducts.Name = "addedProducts";
             this.addedProducts.Size = new System.Drawing.Size(159, 116);
             this.addedProducts.TabIndex = 4;
+            this.addedProducts.SelectedIndexChanged += new System.EventHandler(this.addedProducts_SelectedIndexChanged);
             // 
             // mealsBox
             // 
             this.mealsBox.FormattingEnabled = true;
             this.mealsBox.ItemHeight = 16;
             this.mealsBox.Location = new System.Drawing.Point(11, 242);
-            this.mealsBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mealsBox.Margin = new System.Windows.Forms.Padding(4);
             this.mealsBox.Name = "mealsBox";
             this.mealsBox.Size = new System.Drawing.Size(159, 116);
             this.mealsBox.TabIndex = 3;
@@ -499,7 +548,7 @@
             this.productsBox2.FormattingEnabled = true;
             this.productsBox2.ItemHeight = 16;
             this.productsBox2.Location = new System.Drawing.Point(11, 6);
-            this.productsBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.productsBox2.Margin = new System.Windows.Forms.Padding(4);
             this.productsBox2.Name = "productsBox2";
             this.productsBox2.Size = new System.Drawing.Size(159, 116);
             this.productsBox2.TabIndex = 2;
@@ -524,54 +573,6 @@
             this.userDataButton.Text = "User Data";
             this.userDataButton.UseVisualStyleBackColor = true;
             this.userDataButton.Click += new System.EventHandler(this.userDataButton_Click);
-            // 
-            // mealProductNameField
-            // 
-            this.mealProductNameField.Location = new System.Drawing.Point(497, 8);
-            this.mealProductNameField.Name = "mealProductNameField";
-            this.mealProductNameField.ReadOnly = true;
-            this.mealProductNameField.Size = new System.Drawing.Size(100, 22);
-            this.mealProductNameField.TabIndex = 6;
-            // 
-            // mealGrammsField
-            // 
-            this.mealGrammsField.Location = new System.Drawing.Point(497, 36);
-            this.mealGrammsField.Name = "mealGrammsField";
-            this.mealGrammsField.ReadOnly = true;
-            this.mealGrammsField.Size = new System.Drawing.Size(100, 22);
-            this.mealGrammsField.TabIndex = 7;
-            // 
-            // mealProteinField
-            // 
-            this.mealProteinField.Location = new System.Drawing.Point(497, 64);
-            this.mealProteinField.Name = "mealProteinField";
-            this.mealProteinField.ReadOnly = true;
-            this.mealProteinField.Size = new System.Drawing.Size(100, 22);
-            this.mealProteinField.TabIndex = 8;
-            // 
-            // mealFatsField
-            // 
-            this.mealFatsField.Location = new System.Drawing.Point(497, 92);
-            this.mealFatsField.Name = "mealFatsField";
-            this.mealFatsField.ReadOnly = true;
-            this.mealFatsField.Size = new System.Drawing.Size(100, 22);
-            this.mealFatsField.TabIndex = 9;
-            // 
-            // mealsCarbsField
-            // 
-            this.mealsCarbsField.Location = new System.Drawing.Point(497, 120);
-            this.mealsCarbsField.Name = "mealsCarbsField";
-            this.mealsCarbsField.ReadOnly = true;
-            this.mealsCarbsField.Size = new System.Drawing.Size(100, 22);
-            this.mealsCarbsField.TabIndex = 10;
-            // 
-            // mealCaloriesField
-            // 
-            this.mealCaloriesField.Location = new System.Drawing.Point(497, 148);
-            this.mealCaloriesField.Name = "mealCaloriesField";
-            this.mealCaloriesField.ReadOnly = true;
-            this.mealCaloriesField.Size = new System.Drawing.Size(100, 22);
-            this.mealCaloriesField.TabIndex = 11;
             // 
             // Form1
             // 

@@ -11,10 +11,10 @@ namespace WindowsFormsApp1.MVP.Presenter
 {
     public class MealsPresenter
     {
-        private readonly IMainView _view;
+        private readonly IMainViewMeals _view;
         private readonly IMealsRepository _repository;
 
-        public MealsPresenter(IMainView view, IMealsRepository repository)
+        public MealsPresenter(IMainViewMeals view, IMealsRepository repository)
         {
             _view = view;
             _view.MealsPresenter = this;
@@ -40,7 +40,12 @@ namespace WindowsFormsApp1.MVP.Presenter
         public void UpdateProductView()
         {
             Product p = _repository.GetProduct(_view.SelectedMeal, _view.MealSelectedProduct);
-            
+            _view.CurrentName = p.Name;
+            _view.CurrentGramms = p.Gramms;
+            _view.CurrentProtein = p.Protein;
+            _view.CurrentFats = p.Fats;
+            _view.CurrentCarbs = p.Carbs;
+            _view.CurrentCalories = p.Calories;
         }
     }
 }

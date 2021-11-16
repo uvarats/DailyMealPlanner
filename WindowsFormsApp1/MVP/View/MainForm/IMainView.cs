@@ -18,7 +18,9 @@ namespace WindowsFormsApp1.MVP.View
         double Protein { get; set; }
         double Fats { get; set; }
         double Carbs { get; set; }
-        double Calories { get; set; } 
+        double Calories { get; set; }
+
+        double DCR { get; set; }
         MainPresenter Presenter { set; }
     }
 }

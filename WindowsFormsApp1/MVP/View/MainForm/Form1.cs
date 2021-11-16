@@ -11,7 +11,7 @@ using WindowsFormsApp1.MVP.View;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form, IMainView
+    public partial class Form1 : Form, IMainView, IMainViewMeals
     {
 
         private bool _isEditModeProduct = false;
@@ -141,9 +141,9 @@ namespace WindowsFormsApp1
         public string CurrentName { get => mealProductNameField.Text; set => mealProductNameField.Text = value; }
         public int CurrentGramms { get => int.Parse(mealGrammsField.Text); set => mealGrammsField.Text = value.ToString(); }
         public double CurrentProtein { get => Convert.ToDouble(mealProteinField.Text); set => mealProteinField.Text = value.ToString(); }
-        public double CurrentFats { get => Convert.ToDouble(mealFatsField.Text); set => throw new NotImplementedException(); }
-        public double CurrentCarbs { get => Convert.ToDouble(mealsCarbsField.Text); set => throw new NotImplementedException(); }
-        public double CurrentCalories { get => Convert.ToDouble(mealCaloriesField.Text); set => throw new NotImplementedException(); }
+        public double CurrentFats { get => Convert.ToDouble(mealFatsField.Text); set => mealFatsField.Text = value.ToString(); }
+        public double CurrentCarbs { get => Convert.ToDouble(mealsCarbsField.Text); set => mealsCarbsField.Text = value.ToString(); }
+        public double CurrentCalories { get => Convert.ToDouble(mealCaloriesField.Text); set => mealCaloriesField.Text = value.ToString(); }
         public IList<string> MealsList { get => (IList<string>)mealsBox.DataSource; set => mealsBox.DataSource = value; }
         public IList<string> MealProductsList { get => (IList<string>)addedProducts.DataSource; set => addedProducts.DataSource = value; }
         #endregion
@@ -275,6 +275,11 @@ namespace WindowsFormsApp1
         private void mealsBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             MealsPresenter.UpdateMealProducts();
+        }
+
+        private void addedProducts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MealsPresenter.UpdateProductView();
         }
     }
 }

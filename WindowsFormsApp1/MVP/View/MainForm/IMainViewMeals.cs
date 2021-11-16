@@ -7,7 +7,7 @@ using WindowsFormsApp1.MVP.Presenter;
 
 namespace WindowsFormsApp1.MVP.View
 {
-    public partial interface IMainView
+    public interface IMainViewMeals
     {
         IList<string> MealsList { get; set; }
         IList<string> MealProductsList { get; set; } 
@@ -20,7 +20,7 @@ namespace WindowsFormsApp1.MVP.View
         double CurrentFats { get; set; }
         double CurrentCarbs { get; set; }
         double CurrentCalories { get; set; }
-        double DCR { get; set; }
+        //double DCR { get; set; }
         
         MealsPresenter MealsPresenter { set; }
     }
