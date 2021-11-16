@@ -24,6 +24,10 @@ namespace WindowsFormsApp1.MVP.Presenter
 
             UpdateMealsBox();
         }
+        public void GetMealsCalories()
+        {
+            _view.MealsCalories = _repository.GetMealsCalories();
+        }
         public void UpdateMealsBox()
         {
             var mealsList = from meal in _repository.GetMealsList() select meal.Name;
@@ -31,6 +35,7 @@ namespace WindowsFormsApp1.MVP.Presenter
             int selectedMeal = _view.SelectedMeal >= 0 ? _view.SelectedMeal : 0;
             _view.MealSelectedProduct = 0;
             _view.SelectedMeal = selectedMeal;
+            GetMealsCalories();
         }
         public void UpdateMealProducts()
         {
@@ -38,6 +43,7 @@ namespace WindowsFormsApp1.MVP.Presenter
             _view.MealProductsList = productsList.ToList();
             int mealSelectedProduct = _view.MealSelectedProduct >= 0 ? _view.MealSelectedProduct : 0;
             _view.MealSelectedProduct = mealSelectedProduct;
+            GetMealsCalories();
         }
         public void UpdateProductView()
         {

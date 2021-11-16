@@ -27,6 +27,18 @@ namespace WindowsFormsApp1.MVP.Model
                 Save(); 
             }
         }
+        public double GetMealsCalories()
+        {
+            double counter = 0;
+            foreach (Meal meal in _meals.MealsList)
+            {
+                foreach (Product product in meal.Products)
+                {
+                    counter += product.Calories;
+                }
+            }
+            return counter;
+        }
 
         public void Create(Meal meal)
         {

@@ -10,6 +10,7 @@ namespace WindowsFormsApp1.MVP.Model
     public interface IMealsRepository
     {
         void Create(Meal meal);
+        double GetMealsCalories();
         void CreateProduct(int mealId, Product p);
         void Delete(int id);
         void DeleteProduct(int mealId, int id);

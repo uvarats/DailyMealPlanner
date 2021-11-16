@@ -143,9 +143,10 @@ namespace WindowsFormsApp1
         public string CurrentName { get => mealProductNameField.Text; set => mealProductNameField.Text = value; }
         public int CurrentGramms { get => int.Parse(mealGrammsField.Text); set => mealGrammsField.Text = value.ToString(); }
         public double CurrentCalories { get => Convert.ToDouble(mealCaloriesField.Text); set => mealCaloriesField.Text = value.ToString(); }
-        public IList<string> MealsList { get => (IList<string>)mealsBox.DataSource; set => mealsBox.DataSource = value; }
+        public IList<string> MealsList { get => (IList<string>) mealsBox.DataSource; set => mealsBox.DataSource = value; }
         public IList<string> MealProductsList { get => (IList<string>)addedProducts.DataSource; set => addedProducts.DataSource = value; }
         public string NewMealName { get => mealNameBox.Text; set => mealNameBox.Text = value; }
+        public double MealsCalories { get => Convert.ToDouble(caloriesSum.Text); set => caloriesSum.Text = value.ToString(); }
         #endregion
 
         public Form1()
