@@ -37,6 +37,7 @@ namespace WindowsFormsApp1.MVP.Model
         public void CreateProduct(int mealId, Product p)
         {
             _meals.MealsList[mealId].Products.Add(p);
+            Save();
         }
 
         public void Delete(int id)
@@ -48,6 +49,7 @@ namespace WindowsFormsApp1.MVP.Model
         public void DeleteProduct(int mealId, int id)
         {
             _meals.MealsList[mealId].Products.RemoveAt(id);
+            Save();
         }
 
         public Meal GetByID(int id)

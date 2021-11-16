@@ -27,6 +27,10 @@ namespace WindowsFormsApp1.MVP.Presenter
             UpdateDCR();
         }
 
+        public Product GetSelectedProduct()
+        {
+            return _repository.GetByID(_view.SelectedCategory, _view.SelectedProduct);
+        }
         public IDataRepository GetDataRepository()
         {
             return _userData;
@@ -94,6 +98,14 @@ namespace WindowsFormsApp1.MVP.Presenter
         public void DeleteCategory()
         {
             _repository.RemoveCategory(_view.SelectedCategory);
+            UpdateCategoriesBox();
+        }
+        public void SaveCategory()
+        {
+            Category c = _repository.GetCategoryByID(_view.SelectedCategory);
+            c.Name = _view.CategoryName;
+            c.Description = _view.Description;
+            _repository.Save();
             UpdateCategoriesBox();
         }
     }

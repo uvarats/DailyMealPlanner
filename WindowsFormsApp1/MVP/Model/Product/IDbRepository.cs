@@ -18,7 +18,7 @@ namespace WindowsFormsApp1.MVP.Model
         void Delete(int categoryId, int productId);
         Product GetByID(int categoryId, int productId);
         IEnumerable<Product> GetProductsList(int categoryId);
-        void Save(Db db);
+        void Save();
         void Update(int categoryId, int productId, Product item);
     }
 }

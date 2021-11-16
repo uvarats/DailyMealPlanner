@@ -14,6 +14,8 @@ namespace WindowsFormsApp1.MVP.View
         int MealSelectedProduct { get; set; }
         int SelectedMeal { get; set; }
 
+        string NewMealName { get; set; }
+
         string CurrentName { get; set; }
         int CurrentGramms { get; set; }
         double CurrentProtein { get; set; }

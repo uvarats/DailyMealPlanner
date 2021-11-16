@@ -25,8 +25,8 @@ namespace WindowsFormsApp1
             var repository = new DbRepository(Application.StartupPath);
             var userData = new DataRepository(Application.StartupPath);
             var mealsRepo = new MealsRepository(Application.StartupPath);
-            var mealsPresenter = new MealsPresenter(view, mealsRepo);
             var presenter = new MainPresenter(view, repository, userData);
+            var mealsPresenter = new MealsPresenter(view, mealsRepo, presenter);
             Application.Run(view);
         }
     }

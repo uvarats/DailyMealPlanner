@@ -26,7 +26,7 @@ namespace WindowsFormsApp1.MVP.Model
                 _db.Category.Add(new Category { Name = "Алкоголь" });
                 _db.Category[0].Product = new List<Product>();
                 _db.Category[0].Product.Add(new Product { Name = "Вадим", Calories = 0, Carbs = 1.5, Fats = 1.488, Gramms = 1338, Protein = 2.28 });
-                Save(_db);
+                Save();
             }
             
         }
@@ -35,12 +35,12 @@ namespace WindowsFormsApp1.MVP.Model
         {
             Category category = new Category() { Name = name, Description = description, Product = new List<Product>() };
             _db.Category.Add(category);
-            Save(_db);
+            Save();
         }
         public void RemoveCategory(int id)
         {
             _db.Category.RemoveAt(id);
-            Save(_db);
+            Save();
         }
         public Category GetCategoryByID(int id)
         {
@@ -54,13 +54,13 @@ namespace WindowsFormsApp1.MVP.Model
         public void Create(int categoryId, Product item)
         {
             _db.Category[categoryId].Product.Add(item);
-            Save(_db);
+            Save();
         }
 
         public void Delete(int categoryId, int productId)
         {
             _db.Category[categoryId].Product.RemoveAt(productId);
-            Save(_db);
+            Save();
         }
 
         public Product GetByID(int categoryId, int productId)
@@ -73,15 +73,15 @@ namespace WindowsFormsApp1.MVP.Model
             return _db.Category[categoryId].Product;
         }
 
-        public void Save(Db db)
+        public void Save()
         {
-            GenericSerializer<Db>.Serialize(db, _filePath);
+            GenericSerializer<Db>.Serialize(_db, _filePath);
         }
 
         public void Update(int categoryId, int productId, Product item)
         {
             _db.Category[categoryId].Product[productId] = item;
-            Save(_db);
+            Save();
         }
     }
 }

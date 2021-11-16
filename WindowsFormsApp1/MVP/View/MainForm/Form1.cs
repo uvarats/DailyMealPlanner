@@ -120,6 +120,7 @@ namespace WindowsFormsApp1
             get => addedProducts.SelectedIndex;
             set
             {
+                if (addedProducts.SelectedIndex == -1) return;
                 if (value < MealProductsList.Count)
                 {
                     addedProducts.SelectedIndex = value;
@@ -132,6 +133,7 @@ namespace WindowsFormsApp1
             get => mealsBox.SelectedIndex;
             set
             {
+                if (addedProducts.SelectedIndex == -1) return;
                 if (value < MealsList.Count)
                 {
                     mealsBox.SelectedIndex = value;
@@ -146,6 +148,7 @@ namespace WindowsFormsApp1
         public double CurrentCalories { get => Convert.ToDouble(mealCaloriesField.Text); set => mealCaloriesField.Text = value.ToString(); }
         public IList<string> MealsList { get => (IList<string>)mealsBox.DataSource; set => mealsBox.DataSource = value; }
         public IList<string> MealProductsList { get => (IList<string>)addedProducts.DataSource; set => addedProducts.DataSource = value; }
+        public string NewMealName { get => mealNameBox.Text; set => mealNameBox.Text = value; }
         #endregion
 
         public Form1()
@@ -242,7 +245,7 @@ namespace WindowsFormsApp1
 
             if (!_isEditModeCategory)
             {
-                Presenter.SaveProduct();
+                Presenter.SaveCategory();
             }
         }
 
@@ -256,7 +259,13 @@ namespace WindowsFormsApp1
 
         private void deleteCategoryButton_Click(object sender, EventArgs e)
         {
-            Presenter.DeleteCategory();
+            DialogResult result = MessageBox.Show("Are you sure to delete this item?\n\nChanges cannot be undone.",
+                                     "Delete confirmation.",
+                                     MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Presenter.DeleteCategory();
+            }
         }
 
         private void userDataButton_Click(object sender, EventArgs e)
@@ -275,11 +284,27 @@ namespace WindowsFormsApp1
         private void mealsBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             MealsPresenter.UpdateMealProducts();
+
         }
 
         private void addedProducts_SelectedIndexChanged(object sender, EventArgs e)
         {
             MealsPresenter.UpdateProductView();
+        }
+
+        private void mealAddButton_Click(object sender, EventArgs e)
+        {
+            MealsPresenter.NewMeal();
+        }
+
+        private void mealDeleteButton_Click(object sender, EventArgs e)
+        {
+            MealsPresenter.DeleteMeal();
+        }
+
+        private void addToMealButton_Click(object sender, EventArgs e)
+        {
+            MealsPresenter.AddProductToMeal();
         }
     }
 }
