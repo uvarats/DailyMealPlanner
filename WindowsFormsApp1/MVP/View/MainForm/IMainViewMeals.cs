@@ -18,9 +18,6 @@ namespace WindowsFormsApp1.MVP.View
 
         string CurrentName { get; set; }
         int CurrentGramms { get; set; }
-        double CurrentProtein { get; set; }
-        double CurrentFats { get; set; }
-        double CurrentCarbs { get; set; }
         double CurrentCalories { get; set; }
         //double DCR { get; set; }
         

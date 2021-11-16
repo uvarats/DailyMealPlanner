@@ -44,17 +44,21 @@ namespace WindowsFormsApp1.MVP.Presenter
             Product p = _repository.GetProduct(_view.SelectedMeal, _view.MealSelectedProduct);
             _view.CurrentName = p.Name;
             _view.CurrentGramms = p.Gramms;
-            _view.CurrentProtein = p.Protein;
-            _view.CurrentFats = p.Fats;
-            _view.CurrentCarbs = p.Carbs;
+            //_view.CurrentProtein = p.Protein;
+            //_view.CurrentFats = p.Fats;
+            //_view.CurrentCarbs = p.Carbs;
             _view.CurrentCalories = p.Calories;
         }
         public void NewMeal()
         {
-            Meal m = new Meal { Name = _view.NewMealName, Products = new List<Product>() };
-            _view.NewMealName = "";
-            _repository.Create(m);
-            UpdateMealsBox();
+            if (!string.IsNullOrWhiteSpace(_view.NewMealName))
+            {
+                Meal m = new Meal { Name = _view.NewMealName, Products = new List<Product>() };
+                _view.NewMealName = "";
+                _repository.Create(m);
+                UpdateMealsBox();
+            }
+            else System.Windows.Forms.MessageBox.Show("Input correct meal name!");
         }
         public void DeleteMeal()
         {
@@ -63,9 +67,22 @@ namespace WindowsFormsApp1.MVP.Presenter
         }
         public void AddProductToMeal()
         {
-            Product p = _mainPresenter.GetSelectedProduct();
-            _repository.CreateProduct(_view.SelectedMeal, p);
-            UpdateMealProducts();
+            if (_view.SelectedMeal != -1)
+            {
+                Product p = _mainPresenter.GetSelectedProduct();
+                _repository.CreateProduct(_view.SelectedMeal, p);
+                UpdateMealProducts();
+            }
+            else System.Windows.Forms.MessageBox.Show("Nothing to delete!");
+        }
+        public void DeleteFromMeal()
+        {
+            if (_view.MealSelectedProduct != -1)
+            {
+                _repository.DeleteProduct(_view.SelectedMeal, _view.MealSelectedProduct);
+                UpdateMealProducts();
+            }
+            else System.Windows.Forms.MessageBox.Show("Nothing to delete!");
         }
     }
 }
