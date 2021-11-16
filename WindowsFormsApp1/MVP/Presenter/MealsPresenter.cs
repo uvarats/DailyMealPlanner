@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WindowsFormsApp1.MVP.Model;
 using WindowsFormsApp1.MVP.View;
+using XML;
 
 namespace WindowsFormsApp1.MVP.Presenter
 {
@@ -35,6 +36,11 @@ namespace WindowsFormsApp1.MVP.Presenter
             int mealSelectedProduct = _view.MealSelectedProduct >= 0 ? _view.MealSelectedProduct : 0;
             _view.MealProductsList = productsList.ToList();
             _view.MealSelectedProduct = mealSelectedProduct;
+        }
+        public void UpdateProductView()
+        {
+            Product p = _repository.GetProduct(_view.SelectedMeal, _view.MealSelectedProduct);
+            
         }
     }
 }

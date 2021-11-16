@@ -34,10 +34,20 @@ namespace WindowsFormsApp1.MVP.Model
             Save();
         }
 
+        public void CreateProduct(int mealId, Product p)
+        {
+            _meals.MealsList[mealId].Products.Add(p);
+        }
+
         public void Delete(int id)
         {
             _meals.MealsList.RemoveAt(id);
             Save();
+        }
+
+        public void DeleteProduct(int mealId, int id)
+        {
+            _meals.MealsList[mealId].Products.RemoveAt(id);
         }
 
         public Meal GetByID(int id)
@@ -53,6 +63,11 @@ namespace WindowsFormsApp1.MVP.Model
         public IEnumerable<Meal> GetMealsList()
         {
             return _meals.MealsList;
+        }
+
+        public Product GetProduct(int mealId, int id)
+        {
+            return _meals.MealsList[mealId].Products[id];
         }
 
         public void Save()

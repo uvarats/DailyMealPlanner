@@ -138,12 +138,12 @@ namespace WindowsFormsApp1
                 } else mealsBox.SelectedIndex = 0;
             }
         }
-        public string CurrentName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int CurrentGramms { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public double CurrentProtein { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public double CurrentFats { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public double CurrentCarbs { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public double CurrentCalories { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string CurrentName { get => mealProductNameField.Text; set => mealProductNameField.Text = value; }
+        public int CurrentGramms { get => int.Parse(mealGrammsField.Text); set => mealGrammsField.Text = value.ToString(); }
+        public double CurrentProtein { get => Convert.ToDouble(mealProteinField.Text); set => mealProteinField.Text = value.ToString(); }
+        public double CurrentFats { get => Convert.ToDouble(mealFatsField.Text); set => throw new NotImplementedException(); }
+        public double CurrentCarbs { get => Convert.ToDouble(mealsCarbsField.Text); set => throw new NotImplementedException(); }
+        public double CurrentCalories { get => Convert.ToDouble(mealCaloriesField.Text); set => throw new NotImplementedException(); }
         public IList<string> MealsList { get => (IList<string>)mealsBox.DataSource; set => mealsBox.DataSource = value; }
         public IList<string> MealProductsList { get => (IList<string>)addedProducts.DataSource; set => addedProducts.DataSource = value; }
         #endregion

@@ -67,6 +67,12 @@
             this.productsBox2 = new System.Windows.Forms.ListBox();
             this.dcrLabel = new System.Windows.Forms.Label();
             this.userDataButton = new System.Windows.Forms.Button();
+            this.mealProductNameField = new System.Windows.Forms.TextBox();
+            this.mealGrammsField = new System.Windows.Forms.TextBox();
+            this.mealProteinField = new System.Windows.Forms.TextBox();
+            this.mealFatsField = new System.Windows.Forms.TextBox();
+            this.mealsCarbsField = new System.Windows.Forms.TextBox();
+            this.mealCaloriesField = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.viewAndEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.caloriesField)).BeginInit();
@@ -436,6 +442,12 @@
             // 
             // meals
             // 
+            this.meals.Controls.Add(this.mealCaloriesField);
+            this.meals.Controls.Add(this.mealsCarbsField);
+            this.meals.Controls.Add(this.mealFatsField);
+            this.meals.Controls.Add(this.mealProteinField);
+            this.meals.Controls.Add(this.mealGrammsField);
+            this.meals.Controls.Add(this.mealProductNameField);
             this.meals.Controls.Add(this.categoryCombo2);
             this.meals.Controls.Add(this.addedProducts);
             this.meals.Controls.Add(this.mealsBox);
@@ -513,6 +525,54 @@
             this.userDataButton.UseVisualStyleBackColor = true;
             this.userDataButton.Click += new System.EventHandler(this.userDataButton_Click);
             // 
+            // mealProductNameField
+            // 
+            this.mealProductNameField.Location = new System.Drawing.Point(497, 8);
+            this.mealProductNameField.Name = "mealProductNameField";
+            this.mealProductNameField.ReadOnly = true;
+            this.mealProductNameField.Size = new System.Drawing.Size(100, 22);
+            this.mealProductNameField.TabIndex = 6;
+            // 
+            // mealGrammsField
+            // 
+            this.mealGrammsField.Location = new System.Drawing.Point(497, 36);
+            this.mealGrammsField.Name = "mealGrammsField";
+            this.mealGrammsField.ReadOnly = true;
+            this.mealGrammsField.Size = new System.Drawing.Size(100, 22);
+            this.mealGrammsField.TabIndex = 7;
+            // 
+            // mealProteinField
+            // 
+            this.mealProteinField.Location = new System.Drawing.Point(497, 64);
+            this.mealProteinField.Name = "mealProteinField";
+            this.mealProteinField.ReadOnly = true;
+            this.mealProteinField.Size = new System.Drawing.Size(100, 22);
+            this.mealProteinField.TabIndex = 8;
+            // 
+            // mealFatsField
+            // 
+            this.mealFatsField.Location = new System.Drawing.Point(497, 92);
+            this.mealFatsField.Name = "mealFatsField";
+            this.mealFatsField.ReadOnly = true;
+            this.mealFatsField.Size = new System.Drawing.Size(100, 22);
+            this.mealFatsField.TabIndex = 9;
+            // 
+            // mealsCarbsField
+            // 
+            this.mealsCarbsField.Location = new System.Drawing.Point(497, 120);
+            this.mealsCarbsField.Name = "mealsCarbsField";
+            this.mealsCarbsField.ReadOnly = true;
+            this.mealsCarbsField.Size = new System.Drawing.Size(100, 22);
+            this.mealsCarbsField.TabIndex = 10;
+            // 
+            // mealCaloriesField
+            // 
+            this.mealCaloriesField.Location = new System.Drawing.Point(497, 148);
+            this.mealCaloriesField.Name = "mealCaloriesField";
+            this.mealCaloriesField.ReadOnly = true;
+            this.mealCaloriesField.Size = new System.Drawing.Size(100, 22);
+            this.mealCaloriesField.TabIndex = 11;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -579,5 +639,11 @@
         private System.Windows.Forms.ListBox productsBox2;
         private System.Windows.Forms.ListBox addedProducts;
         private System.Windows.Forms.ComboBox categoryCombo2;
+        private System.Windows.Forms.TextBox mealCaloriesField;
+        private System.Windows.Forms.TextBox mealsCarbsField;
+        private System.Windows.Forms.TextBox mealFatsField;
+        private System.Windows.Forms.TextBox mealProteinField;
+        private System.Windows.Forms.TextBox mealGrammsField;
+        private System.Windows.Forms.TextBox mealProductNameField;
     }
 }
