@@ -69,6 +69,10 @@ namespace XML
                 && p.Calories == Calories;
 
         }
+        public override string ToString()
+        {
+            return $"Product: {Name}\n Gramms: {Gramms}\n Protein: {Protein}\n Fats: {Fats}\n Carbs: {Carbs}\n Calories: {Calories}\n\n";
+        }
 
         public Product()
         {

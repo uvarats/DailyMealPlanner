@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using WindowsFormsApp1.MVP.Presenter;
 
 namespace WindowsFormsApp1.MVP.View
@@ -20,6 +21,7 @@ namespace WindowsFormsApp1.MVP.View
         int CurrentGramms { get; set; }
         double CurrentCalories { get; set; }
         double MealsCalories { get; set; }
+        SaveFileDialog SaveDialog { get; set; }
         //double DCR { get; set; }
         
         MealsPresenter MealsPresenter { set; }

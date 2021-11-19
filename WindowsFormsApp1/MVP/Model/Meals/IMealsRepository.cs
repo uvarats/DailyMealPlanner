@@ -18,6 +18,7 @@ namespace WindowsFormsApp1.MVP.Model
         Product GetProduct(int mealId, int id);
         IEnumerable<Meal> GetMealsList();
         IEnumerable<Product> GetMealProducts(int id);
+        string ToString();
         void Update(int id, Meal meal);
         void Save();
     }

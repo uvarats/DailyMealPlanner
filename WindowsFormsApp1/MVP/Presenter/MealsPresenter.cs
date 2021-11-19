@@ -54,6 +54,7 @@ namespace WindowsFormsApp1.MVP.Presenter
             //_view.CurrentFats = p.Fats;
             //_view.CurrentCarbs = p.Carbs;
             _view.CurrentCalories = p.Calories;
+            GetMealsCalories();
         }
         public void NewMeal()
         {
@@ -89,6 +90,29 @@ namespace WindowsFormsApp1.MVP.Presenter
                 UpdateMealProducts();
             }
             else System.Windows.Forms.MessageBox.Show("Nothing to delete!");
+        }
+        public void SaveToFile()
+        {
+            _view.SaveDialog.Filter = "Text files(*.txt)|*.txt|All files(*.*)|*.*";
+            if (_view.SaveDialog.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
+                return;
+
+            string fileName = _view.SaveDialog.FileName;
+            System.IO.File.WriteAllText(fileName, _repository.ToString());
+            System.Windows.Forms.MessageBox.Show("Meals saved to file!");
+        }
+        public void IncreaseWeight()
+        {
+            Product p = _repository.GetProduct(_view.SelectedMeal, _view.MealSelectedProduct);
+            p.Gramms += 100;
+            double increaseCoefficient = p.Gramms * 1.0 / (p.Gramms - 100) * 1.0;
+            p.Protein *= increaseCoefficient;
+            p.Fats *= increaseCoefficient;
+            p.Carbs *= increaseCoefficient;
+            p.Calories *= increaseCoefficient;
+            _repository.Save();
+            UpdateProductView();
+
         }
     }
 }

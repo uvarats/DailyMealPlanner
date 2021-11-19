@@ -108,5 +108,26 @@ namespace WindowsFormsApp1.MVP.Presenter
             _repository.Save();
             UpdateCategoriesBox();
         }
+        public void Filter()
+        {
+            for (int i = 0; i < _view.ProductsList.Count; i++)
+            {
+                if (((string)_view.ProductsList[i]).Contains(_view.FindField))
+                {
+                    _view.SelectedProduct = i;
+                }
+            }
+            //var productsList = from product in _repository.GetProductsList(_view.SelectedCategory) select product.Name;
+            //List<string> products = productsList.ToList();
+            //if (!string.IsNullOrWhiteSpace(_view.FindField))
+            //{
+            //    products = products.FindAll(s => s.Contains(_view.FindField));
+            //    _view.ProductsList = products;
+            //}
+            //else
+            //{
+            //    UpdateProductsListBox();
+            //}
+        }
     }
 }

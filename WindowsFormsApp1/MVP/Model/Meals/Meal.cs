@@ -16,6 +16,26 @@ namespace WindowsFormsApp1.MVP.Model
     {
         public string Name { get; set; }
         public List<Product> Products { get; set; }
+        public override string ToString()
+        {
+            double calories = 0.0;
+            string result = $"Meal: {Name}\n\n";
+            foreach (Product p in Products)
+            {
+                result += p.ToString();
+                calories += p.Calories;
+            }
+            result += $"Total meal calories: {calories}.\n\n";
+            return result;
+        }
+        //public double GetCalories()
+        //{
+        //    double result = 0;
+        //    foreach (Product p in collection)
+        //    {
+
+        //    }
+        //}
         public Meal()
         {
 

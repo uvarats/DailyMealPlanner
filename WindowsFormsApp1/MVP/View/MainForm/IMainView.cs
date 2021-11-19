@@ -20,6 +20,7 @@ namespace WindowsFormsApp1.MVP.View
         double Carbs { get; set; }
         double Calories { get; set; }
         double DCR { get; set; }
+        string FindField { get; set; }
         MainPresenter Presenter { set; }
     }
 }

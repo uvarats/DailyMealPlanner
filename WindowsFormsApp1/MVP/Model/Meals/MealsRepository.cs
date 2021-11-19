@@ -88,6 +88,15 @@ namespace WindowsFormsApp1.MVP.Model
         {
             GenericSerializer<Meals>.Serialize(_meals, _filePath);
         }
+        public override string ToString()
+        {
+            string result = "";
+            foreach (Meal m in _meals.MealsList)
+            {
+                result += m.ToString();
+            }
+            return result;
+        }
 
         public void Update(int id, Meal meal)
         {

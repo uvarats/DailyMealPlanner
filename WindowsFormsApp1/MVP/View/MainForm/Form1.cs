@@ -148,6 +148,8 @@ namespace WindowsFormsApp1
         public string NewMealName { get => mealNameBox.Text; set => mealNameBox.Text = value; }
         public double MealsCalories { get => Convert.ToDouble(caloriesSum.Text); set => caloriesSum.Text = value.ToString(); }
         #endregion
+        public string FindField { get => textBox1.Text; set => textBox1.Text = value; }
+        public SaveFileDialog SaveDialog { get => saveFileDialog1; set => saveFileDialog1 = value; }
 
         public Form1()
         {
@@ -181,18 +183,7 @@ namespace WindowsFormsApp1
         
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            for (int i = 0; i < productsBox.Items.Count; i++)
-            {
-                if (((string)productsBox.Items[i]).Contains(textBox1.Text))
-                {
-                    productsBox.SelectedIndex = i;
-                }
-            }
-        }
-
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            tabControl1.SelectedIndex.ToString();
+            Presenter.Filter();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -308,6 +299,16 @@ namespace WindowsFormsApp1
         private void deleteFromMealButton_Click(object sender, EventArgs e)
         {
             MealsPresenter.DeleteFromMeal();
+        }
+
+        private void increaseButton_Click(object sender, EventArgs e)
+        {
+            MealsPresenter.IncreaseWeight();
+        }
+
+        private void saveMealsButton_Click(object sender, EventArgs e)
+        {
+            MealsPresenter.SaveToFile();
         }
     }
 }
